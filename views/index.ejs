@@ -1,0 +1,71 @@
+<% include partials/head %>
+
+  <body>
+    <div class ="container">
+    <!--navbar start-->
+    <div class="  navbar-default">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle Navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"> Passport Authentication.</a>
+      <div class="collapse navbar-collapse" id="#bs-example-navbar-collapse-1">
+        <ul class="navbar-nav nav navbar-right"style="height:20px; ">
+          <% if (!user) { %>
+            <li>
+              <a href="/login">Login </a>
+            </li>
+            <li>
+              <a href="/register">Register</a>
+            </li>
+            <% }  %>
+              <% if (user) { %>
+                <li>
+                  <a>welcome </a>
+                </li>
+                <li>
+                  <a href="/logout">logout</a>
+                </li>
+                <% }  %>
+        </ul>
+      </div>
+      <!--navbar end-->
+    </div>
+    <!--first contaienr-->
+    </div>
+      <% if (!user) { %>
+    <div class ="container">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="jumbotron text-center">
+        <h1 style="font-size:40px;">Express Mvc App</h1>
+        <p class="lead">Authentication portal</p>
+
+        <a href="/login" class="btn btn-default">
+          <span class="fa fa-sign-in"></span> Login</a>
+        <a href="/register" class="btn btn-default">
+          <span class="fa fa-user"></span> Signup</a>
+         
+      </div>
+      <p>Coded by sai prasath
+    </div>
+    <% }  %>
+    <% if (user) { %>
+      <div class ="container">
+        <div class="jumbotron">
+            <h1>hello user -index.ejs</h1>
+              <h1>post section</h1>
+              <p>Welcome to post section</p>
+              <h4>
+                <a href="/employees">post section link</a>
+              </h4>
+        </div>
+      </div>
+        <% }  %>
+    <!-- second container div-->
+    </div>
+  </body>
+
+  </html>
+  
